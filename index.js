@@ -1,22 +1,20 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
+var server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
-app.use(bodyParser.json())
+server.listen(process.env.PORT || 4000, () => {
+    console.log('Welcome to our server at ' + 4000);
+});
+
+app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
     res.send('Hello World')
-  })
+})
 
-  app.get('/places/:id', function (req, res) {
-    var id = req.params.id;
-    var p = req.params.p;
-    res.send(id+p)
-  })
-   
-  app.post('/places', function (req, res) {
-      var body = req.body;
-      res.send(body)
-  })
-   
-app.listen(process.env.PORT || 3000);
+io.on('connection', client => {
+    client.on('event', data => { console.log(data) });
+    client.on('disconnect', () => { console.log('disconnected') });
+});
