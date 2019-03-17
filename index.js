@@ -15,6 +15,7 @@ app.get('/', function (req, res) {
 })
 
 io.on('connection', client => {
+    client.emit('connected','hello in sockets')
     client.on('event', data => { console.log(data) });
     client.on('disconnect', () => { console.log('disconnected') });
 });
