@@ -19,4 +19,4 @@ app.get('/', function (req, res) {
       res.send(body)
   })
    
-app.listen(3000||process.env);
+app.listen(3000||process.env.PORT);
