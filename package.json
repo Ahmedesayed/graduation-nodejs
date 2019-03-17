@@ -1,0 +1,16 @@
+{
+  "name": "grad",
+  "version": "1.0.0",
+  "description": "Graduation project",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  }
+}
