@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
     res.send('Hello World')
 })
 
-io.of('/socket').on('connection', client => {
+io.on('connection', client => {
     console.log('connected with id ' + client.id)
     client.on('chat_direct', data => {
         io.emit('message_sent',data);
