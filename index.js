@@ -13,16 +13,11 @@ app.use(bodyParser.json());
 app.get('/', function (req, res) {
     res.send('Hello World')
 })
-io.of('/flutter').on("connection",client=>{
-    console.log('connected with id '+client.id)
-    client.on('event', data => {
-        client.emit('connected',data)
-    });
-    client.on('disconnect', () => { console.log('disconnected') });
-})
+
 io.on('connection', client => {
-    console.log('connected with id '+client.id)
+    console.log('connected with id ' + client.id)
     client.on('event', data => {
+        console.log('event with ' + data)
         client.emit('connected',data)
     });
     client.on('disconnect', () => { console.log('disconnected') });
