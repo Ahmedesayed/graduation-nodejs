@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 io.on('connection', client => {
     console.log('connected with id ' + client.id)
     client.on('chat_direct', data => {
-        console.log('chat with ' + data)
+        console.log(data);
         client.emit('connected',data)
     });
     client.on('disconnect', () => { console.log('disconnected') });
