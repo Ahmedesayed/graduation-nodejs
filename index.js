@@ -16,6 +16,8 @@ app.get('/', function (req, res) {
 
 io.on('connection', client => {
     console.log('connected with id ' + client.id)
+    client.emit('connected',client.id)
+
     client.on('event', data => {
         console.log('event with ' + data)
         client.emit('connected',data)
