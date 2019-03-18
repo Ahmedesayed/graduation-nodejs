@@ -14,11 +14,10 @@ app.get('/', function (req, res) {
     res.send('Hello World')
 })
 
-io.on('connection', client => {
+io.of('/socket').on('connection', client => {
     console.log('connected with id ' + client.id)
     client.on('chat_direct', data => {
-        console.log(data);
-        io.emit('connected',data)
+        io.emit('message_sent',data);
     });
     client.on('disconnect', () => { console.log('disconnected') });
 });
