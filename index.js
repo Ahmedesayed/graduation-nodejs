@@ -22,7 +22,7 @@ options = {
   }
 };
 
-http.get('/a',options, function(res) {
+http.get('/',options, function(res) {
   res.pipe(process.stdout);
   return console.log("status code", res.statusCode);
 });
@@ -30,9 +30,9 @@ http.get('/a',options, function(res) {
 
 // app.use(bodyParser.json());
 
-app.get('/', function (req, res) {
-    res.send('Hello World')
-})
+// app.get('/', function (req, res) {
+//     res.send('Hello World')
+// })
 
 // io.on('connection', client => {
 //     console.log('connected with id ' + client.id)
