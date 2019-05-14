@@ -11,7 +11,7 @@ url = require("url");
 
 proxy = url.parse(process.env.QUOTAGUARDSTATIC_URL);
 target  = url.parse("https://graduation-project12.herokuapp.com/");
-console.log(target)
+console.log(target,proxy)
 options = {
   hostname: proxy.hostname,
   port: proxy.port || 80,
