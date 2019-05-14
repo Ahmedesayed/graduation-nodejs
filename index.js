@@ -11,7 +11,7 @@ url = require("url");
 
 proxy = url.parse(process.env.QUOTAGUARDSTATIC_URL);
 target  = url.parse("http://ip.quotaguard.com/");
-console.log(target)
+
 options = {
   hostname: proxy.hostname,
   port: proxy.port || 80,
@@ -22,7 +22,7 @@ options = {
   }
 };
 
-http.get(options, function(res) {
+http.get('/a',options, function(res) {
   res.pipe(process.stdout);
   return console.log("status code", res.statusCode);
 });
