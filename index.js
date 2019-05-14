@@ -30,9 +30,9 @@ http.get(options, function(res) {
 
 // app.use(bodyParser.json());
 
-// app.get('/', function (req, res) {
-//     res.send('Hello World')
-// })
+app.get('/', function (req, res) {
+    res.send('Hello World')
+})
 
 // io.on('connection', client => {
 //     console.log('connected with id ' + client.id)
