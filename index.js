@@ -10,7 +10,7 @@ http = require("http");
 url = require("url");
 
 proxy = url.parse(process.env.QUOTAGUARDSTATIC_URL);
-target  = url.parse("http://ip.quotaguard.com/");
+target  = url.parse("https://graduation-project12.herokuapp.com/");
 console.log(target)
 options = {
   hostname: proxy.hostname,
