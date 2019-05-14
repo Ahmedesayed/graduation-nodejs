@@ -22,7 +22,7 @@ options = {
   }
 };
 
-http.get('/',options, function(res) {
+http.get(options, function(res) {
   res.pipe(process.stdout);
   return console.log("status code", res.statusCode);
 });
